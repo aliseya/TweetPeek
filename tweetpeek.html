@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>TweetPeek Demo Page</title>
+
+<style>
+a.twitter:visited {
+	padding: 0;
+   background:none; 
+   text-decoration:none;
+   color:#30caff;
+
+}
+a.twitter:active {
+	
+	text-decoration: none;
+	color:#CCCCCC;
+	
+}
+
+
+a.twitter:link { 
+   padding: 0;
+   background:none; 
+   text-decoration:none;
+   color:#30caff;
+}
+
+a.twitter:hover {
+
+	text-decoration: none; 
+	color: #CCCCCC;
+	
+}
+
+.profile_img{
+	width:50px; 
+	height:50px; 
+	margin:5px; 
+	overflow:hidden;
+	border-color:#696969;
+	border-width:1px;
+	border-style:solid;
+}
+
+.round{
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+@TechCrunch
+<div id="tcBox"  style="font-size:12.5px; border:solid 1px #202020; padding:5px; width:600px; background-color:#333333; color:#ffffff;"></div>
+
+<br /><br /><br />
+
+
+@danieltosh
+<div id="dtBox"  style="font-size:11.5px; border:solid 1px #202020; padding:5px;  width:500px; background-color:#efefef; color:#000000;" class="round"></div>
+
+
+</div>
+
+<script src="tweetpeek.js" language="javascript"></script>
+
+
+
+<script>
+
+var myTweetPeek = TweetPeekLib.tweetPeek(document.getElementById("dtBox"),  "@danieltosh", 1, 3500 , "twitter", "profile_img");
+myTweetPeek.loadTweets();
+
+
+var myTweetPeek2 = TweetPeekLib.tweetPeek(document.getElementById("tcBox"),  "TechCrunch", 5, 6000, "twitter", "profile_img" );
+myTweetPeek2.loadTweets();
+
+</script>
+</body>
+</html>
