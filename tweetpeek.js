@@ -6,7 +6,7 @@
  * 
  */
 //Global namespace
-TweetPeekLib = {};
+var TweetPeekLib = {};
 
 /**
  *
@@ -47,12 +47,13 @@ TweetPeekLib.tweetPeek = function (renderingDiv, twitterID, numToShow, speed_ms,
         twitter_user = twitter_user.substring(1, twitter_user.length);
     }
 
+    holder_div.innerHTML = ""; 
     //create the holder div 
     var boxHeight = (num_visible * 60) - 2;
     tweet_holder = document.createElement('div');
     tweet_holder.style.overflow = "hidden";
     tweet_holder.style.height = boxHeight + "px"
-    tweet_holder.style.width = "inherit";
+    //tweet_holder.style.width = "inherit";
     tweet_holder.style.position = "relative";
     tweet_holder.style.top = "0px";
 
@@ -162,7 +163,7 @@ TweetPeekLib.tweetPeek = function (renderingDiv, twitterID, numToShow, speed_ms,
             twitter_query = "http://search.twitter.com/search.json?q=from:" + twitter_user + "+OR+@" + twitter_user + "&rpp=20&callback=TweetPeekLib." + loaderCallback;
             newScript.src = twitter_query;
             tweet_box.appendChild(newScript);
-        },
+        }
 
 
 
